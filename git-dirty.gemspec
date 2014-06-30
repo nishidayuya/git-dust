@@ -1,16 +1,17 @@
 # coding: utf-8
-lib = File.expand_path('../lib', __FILE__)
-$LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require 'git/dirty/version'
+
+require "pathname"
+lib = Pathname(__dir__) + "lib"
+$LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib.to_s)
+require "git-dirty"
 
 Gem::Specification.new do |spec|
   spec.name          = "git-dirty"
   spec.version       = Git::Dirty::VERSION
   spec.authors       = ["Yuya.Nishida."]
   spec.email         = ["yuya@j96.org"]
-  spec.description   = %q{TODO: Write a gem description}
-  spec.summary       = %q{TODO: Write a gem summary}
-  spec.homepage      = ""
+  spec.summary       = "git-dirty is a git sub command for dirty commiting flow"
+  spec.homepage      = "https://github.com/nishidayuya/git-dirty"
   spec.license       = "X11"
 
   spec.files         = `git ls-files`.split($/)
