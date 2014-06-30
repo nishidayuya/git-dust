@@ -4,17 +4,16 @@ TODO: Write a gem description
 
 ## Installation
 
-Add this line to your application's Gemfile:
+Install it by RubyGems:
+```shell
+$ gem install git-dirty
+```
 
-    gem 'git-dirty'
-
-And then execute:
-
-    $ bundle
-
-Or install it yourself as:
-
-    $ gem install git-dirty
+Install without RubyGems:
+```shell
+$ curl https://raw.githubusercontent.com/nishidayuya/git-dirty/master/lib/git-dirty.rb > path-environment-directory/git-dirty
+$ chmod a+x path-environment-directory/git-dirty
+```
 
 ## Usage
 
