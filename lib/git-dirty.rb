@@ -6,7 +6,7 @@ end
 class Git::Dirty
   VERSION = "0.0.0"
 
-  def self.help
+  def self.help(args = [])
     STDERR.puts(<<EOS)
 #{File.basename($0)} <command> [<args>]
 
@@ -17,9 +17,10 @@ EOS
 
   def self.run(command_and_args)
     command = command_and_args.first || "help"
+    args = command_and_args[1 .. -1]
     defined_commands = public_methods(false) - %i(allocate new superclass run)
     if defined_commands.include?(command.to_sym)
-      send(command)
+      send(command, *args)
     else
       STDERR.puts("sub command not found: sub_command=<#{command}>")
       STDERR.puts
@@ -28,12 +29,12 @@ EOS
     end
   end
 
-  def self.commit
+  def self.commit(args)
     head_commit_message = `git show -q --format=format:%s`
     if COMMIT_MESSAGE_REGEXP.match(head_commit_message)
-      exec(*%w(git commit --fixup HEAD))
+      exec(*%w(git commit --fixup HEAD), *args)
     else
-      exec(*%w(git commit -m), COMMIT_MESSAGE)
+      exec(*%w(git commit -m), COMMIT_MESSAGE, *args)
     end
   end
 
