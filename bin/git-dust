@@ -1,0 +1,4 @@
+#! /usr/bin/env ruby
+
+require "git-dust"
+Git::Dust.run(ARGV)

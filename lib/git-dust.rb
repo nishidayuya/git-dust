@@ -3,14 +3,14 @@
 module Git
 end
 
-class Git::Dirty
+class Git::Dust
   VERSION = "0.0.0"
 
   def self.help(args = [])
     STDERR.puts(<<EOS)
 #{File.basename($0)} <command> [<args>]
 
-git dirty commands are:
+git dust commands are:
 * commit
 EOS
   end
@@ -40,10 +40,10 @@ EOS
 
   private
 
-  COMMIT_MESSAGE = "dirty commit 001.".freeze
+  COMMIT_MESSAGE = "temporary commit by git-dust: 001".freeze
   COMMIT_MESSAGE_REGEXP = /\A(fixup! )?#{Regexp.escape(COMMIT_MESSAGE)}\z/
 end
 
 if $0 == __FILE__
-  Git::Dirty.run(ARGV)
+  Git::Dust.run(ARGV)
 end

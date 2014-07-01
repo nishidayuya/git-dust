@@ -3,15 +3,15 @@
 require "pathname"
 lib = Pathname(__dir__) + "lib"
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib.to_s)
-require "git-dirty"
+require "git-dust"
 
 Gem::Specification.new do |spec|
-  spec.name          = "git-dirty"
-  spec.version       = Git::Dirty::VERSION
+  spec.name          = "git-dust"
+  spec.version       = Git::Dust::VERSION
   spec.authors       = ["Yuya.Nishida."]
   spec.email         = ["yuya@j96.org"]
-  spec.summary       = "git-dirty is a git sub command for dirty commiting flow"
-  spec.homepage      = "https://github.com/nishidayuya/git-dirty"
+  spec.summary       = "git-dust is a git sub command for dust commiting flow"
+  spec.homepage      = "https://github.com/nishidayuya/git-dust"
   spec.license       = "X11"
 
   spec.files         = `git ls-files`.split($/)

@@ -1,4 +1,4 @@
-# Git::Dirty
+# Git::Dust
 
 TODO: Write a gem description
 
@@ -6,13 +6,13 @@ TODO: Write a gem description
 
 Install it by RubyGems:
 ```shell
-$ gem install git-dirty
+$ gem install git-dust
 ```
 
 Install without RubyGems:
 ```shell
-$ curl https://raw.githubusercontent.com/nishidayuya/git-dirty/master/lib/git-dirty.rb > path-environment-directory/git-dirty
-$ chmod a+x path-environment-directory/git-dirty
+$ curl https://raw.githubusercontent.com/nishidayuya/git-dust/master/lib/git-dust.rb > path-environment-directory/git-dust
+$ chmod a+x path-environment-directory/git-dust
 ```
 
 ## Usage
