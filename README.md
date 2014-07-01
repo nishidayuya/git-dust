@@ -5,12 +5,12 @@ TODO: Write a gem description
 ## Installation
 
 Install it by RubyGems:
-```shell
+```sh
 $ gem install git-dust
 ```
 
 Install without RubyGems:
-```shell
+```sh
 $ curl https://raw.githubusercontent.com/nishidayuya/git-dust/master/lib/git-dust.rb > path-environment-directory/git-dust
 $ chmod a+x path-environment-directory/git-dust
 ```
