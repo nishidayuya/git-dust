@@ -15,10 +15,6 @@ $ curl https://raw.githubusercontent.com/nishidayuya/git-dust/master/lib/git-dus
 $ chmod a+x path-environment-directory/git-dust
 ```
 
-## Usage
-
-TODO: Write usage instructions here
-
 ## Contributing
 
 1. Fork it
