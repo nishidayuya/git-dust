@@ -1,6 +1,6 @@
 # Git::Dust
 
-TODO: Write a gem description
+A Git sub command for Git Dust Flow.
 
 ## Installation
 

@@ -10,7 +10,7 @@ Gem::Specification.new do |spec|
   spec.version       = Git::Dust::VERSION
   spec.authors       = ["Yuya.Nishida."]
   spec.email         = ["yuya@j96.org"]
-  spec.summary       = "git-dust is a git sub command for dust commiting flow"
+  spec.summary       = "A Git sub command for Git Dust Flow."
   spec.homepage      = "https://github.com/nishidayuya/git-dust"
   spec.license       = "X11"
 
