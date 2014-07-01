@@ -40,7 +40,7 @@ EOS
 
   private
 
-  COMMIT_MESSAGE = "temporary commit by git-dust: 001".freeze
+  COMMIT_MESSAGE = "git-dust commit".freeze
   COMMIT_MESSAGE_REGEXP = /\A(fixup! )?#{Regexp.escape(COMMIT_MESSAGE)}\z/
 end
 
