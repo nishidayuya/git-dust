@@ -1,4 +1,4 @@
-# Git::Dust
+# git-dust
 
 A Git sub command for Git Dust Flow.
 
