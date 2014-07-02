@@ -20,7 +20,7 @@ EOS
     args = command_and_args[1 .. -1]
     defined_commands = public_methods(false) - %i(allocate new superclass run)
     if defined_commands.include?(command.to_sym)
-      send(command, *args)
+      send(command, args)
     else
       STDERR.puts("sub command not found: sub_command=<#{command}>")
       STDERR.puts
