@@ -30,18 +30,12 @@ EOS
   end
 
   def self.commit(args)
-    head_commit_message = `git show -q --format=format:%s`
-    if COMMIT_MESSAGE_REGEXP.match(head_commit_message)
-      exec(*%w(git commit --fixup HEAD), *args)
-    else
-      exec(*%w(git commit -m), COMMIT_MESSAGE, *args)
-    end
+    exec(*%w(git commit -m), COMMIT_MESSAGE, *args)
   end
 
   private
 
-  COMMIT_MESSAGE = "git-dust commit".freeze
-  COMMIT_MESSAGE_REGEXP = /\A(fixup! )?#{Regexp.escape(COMMIT_MESSAGE)}\z/
+  COMMIT_MESSAGE = "git-dust commit.".freeze
 end
 
 if $0 == __FILE__
