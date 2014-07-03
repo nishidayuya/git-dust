@@ -30,12 +30,18 @@ EOS
   end
 
   def self.commit(args)
-    exec(*%w(git commit -m), COMMIT_MESSAGE, *args)
+    run_command(*%w(git commit -m), COMMIT_MESSAGE, *args)
   end
 
   private
 
   COMMIT_MESSAGE = "git-dust commit.".freeze
+
+  def self.run_command(*args)
+    if !system(*args)
+      raise "failed: args=<#{args.inspect}>"
+    end
+  end
 end
 
 if $0 == __FILE__
