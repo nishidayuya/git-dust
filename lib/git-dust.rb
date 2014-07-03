@@ -1,5 +1,19 @@
 #! /usr/bin/env ruby
 
+require "open3"
+require "pathname"
+
+# compatibility
+if !Pathname.public_method_defined?(:write)
+  class Pathname
+    def write(*args)
+      open("w") do |f|
+        f.write(*args)
+      end
+    end
+  end
+end
+
 module Git
 end
 
