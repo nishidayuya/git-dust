@@ -31,10 +31,11 @@ EOS
 
   def self.run(command_and_args)
     command = command_and_args.first || "help"
+    command_symbol = command.gsub("-", "_").to_sym
     args = command_and_args[1 .. -1]
     defined_commands = public_methods(false) - %i(allocate new superclass run)
-    if defined_commands.include?(command.to_sym)
-      send(command, args)
+    if defined_commands.include?(command_symbol)
+      send(command_symbol, args)
     else
       STDERR.puts("sub command not found: sub_command=<#{command}>")
       STDERR.puts
