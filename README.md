@@ -1,6 +1,6 @@
 # git-dust
 
-A Git sub command for Git Dust Flow.
+A Git sub command for Dust Commits Workflow.
 
 ## Installation
 
