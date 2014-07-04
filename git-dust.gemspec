@@ -1,8 +1,7 @@
 # coding: utf-8
 
-require "pathname"
-lib = Pathname(__dir__) + "lib"
-$LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib.to_s)
+lib = File.join(__dir__, "lib")
+$LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require "git-dust"
 
 Gem::Specification.new do |spec|
