@@ -81,7 +81,7 @@ EOS
 
   private
 
-  COMMIT_MESSAGE = "git-dust commit.".freeze
+  COMMIT_MESSAGE = "git dust commit.".freeze
 
   def self.run_command(*args)
     if !system(*args)
