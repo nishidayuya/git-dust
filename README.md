@@ -15,6 +15,20 @@ $ curl https://raw.githubusercontent.com/nishidayuya/git-dust/master/lib/git-dus
 $ chmod a+x path-environment-directory/git-dust
 ```
 
+## Usage
+
+To create many dust commits and squash them:
+```sh
+$ git add foo.txt
+$ git dust commit
+<commit foo.txt with commit message "git dust commit.">
+$ git dust commit -a
+<commit modified files with commit message "git dust commit.">
+...
+$ git dust squash
+<squash dust commits and open editor to write commit message>
+```
+
 ## Contributing
 
 1. Fork it
