@@ -4,6 +4,10 @@ A Git sub command for Dust Commits Workflow.
 
 ## Installation
 
+Depenedencies:
+* git
+* Ruby
+
 Install standalone version:
 ```sh
 $ curl https://raw.githubusercontent.com/nishidayuya/git-dust/master/lib/git-dust.rb > path-environment-directory/git-dust
