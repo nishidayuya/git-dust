@@ -1,4 +1,4 @@
-# git-dust
+# git dust
 
 A Git sub command for Dust Commits Workflow.
 
