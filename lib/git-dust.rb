@@ -48,7 +48,7 @@ EOS
     run_command(*%w(git commit -m), COMMIT_MESSAGE, *args)
   end
 
-  def self.squash(args)
+  def self.fix(args)
     base_sha1 = find_non_dust_commit
     saved_editor_environment = ENV["GIT_SEQUENCE_EDITOR"]
     begin

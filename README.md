@@ -24,7 +24,7 @@ $ git dust commit
 $ git dust commit -a
 <commit modified files with commit message "git dust commit.">
 ...
-$ git dust squash
+$ git dust fix
 <squash dust commits and open editor to write commit message>
 ```
 
