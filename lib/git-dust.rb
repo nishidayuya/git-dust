@@ -57,7 +57,7 @@ EOS
     ensure
       ENV["GIT_SEQUENCE_EDITOR"] = saved_editor_environment
     end
-    run_command("git reset --soft HEAD^")
+    run_command(*%w(git reset --soft HEAD^))
     run_command("git commit --edit")
   end
 
