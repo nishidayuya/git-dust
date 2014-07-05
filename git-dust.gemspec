@@ -2,7 +2,7 @@
 
 lib = File.join(__dir__, "lib")
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require "git-dust"
+require "git/dust"
 
 Gem::Specification.new do |spec|
   spec.name          = "git-dust"
