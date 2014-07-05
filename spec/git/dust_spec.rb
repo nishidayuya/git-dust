@@ -8,6 +8,9 @@ RSpec.describe Git::Dust do
           tmp_path = Pathname(d)
 
           g = Git.init(tmp_path.to_s)
+          g.config("user.name", "git-dust test user")
+          g.config("user.email", "anonymous@git-dust.example.org")
+
           file1_path = tmp_path + "a.txt"
           file1_path.write("1\n")
           g.add(all: true)
