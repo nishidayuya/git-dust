@@ -18,8 +18,6 @@ module Git
 end
 
 class Git::Dust
-  VERSION = "0.0.0"
-
   def self.help(args = [])
     STDERR.puts(<<EOS)
 #{File.basename($0)} <command> [<args>]

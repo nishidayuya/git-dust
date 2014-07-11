@@ -2,11 +2,10 @@
 
 lib = File.join(__dir__, "lib")
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require "git/dust"
 
 Gem::Specification.new do |spec|
   spec.name          = "git-dust"
-  spec.version       = Git::Dust::VERSION
+  spec.version       = "0.0.0"
   spec.authors       = ["Yuya.Nishida."]
   spec.email         = ["yuya@j96.org"]
   spec.summary       = "A Git sub command for Dust Commits Workflow."
