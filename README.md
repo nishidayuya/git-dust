@@ -2,6 +2,8 @@
 
 A Git sub command for Dust Commits Workflow.
 
+ [![Build Status](https://travis-ci.org/nishidayuya/git-dust.svg?branch=master)](https://travis-ci.org/nishidayuya/git-dust)
+
 ## Installation
 
 Depenedencies:
