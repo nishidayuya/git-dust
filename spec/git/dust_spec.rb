@@ -90,6 +90,7 @@ EOS
           g.add(all: true)
           Git::Dust.commit([])
           chenv(PATH: [BIN_PATH, ENV["PATH"]].join(":"),
+                RUBYLIB: [LIB_PATH, ENV["RUBYLIB"]].join(":"),
                 GIT_EDITOR: git_editor_path) do
             expect do
               Git::Dust.fix([])

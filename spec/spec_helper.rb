@@ -9,3 +9,4 @@ require "git/dust"
 
 TOP_PATH = Pathname(__dir__).parent.expand_path
 BIN_PATH = TOP_PATH + "bin"
+LIB_PATH = TOP_PATH + "lib"
