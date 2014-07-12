@@ -30,6 +30,11 @@ $ git dust fix
 <squash dust commits and open editor to write commit message>
 ```
 
+## News
+
+* 0.0.0: 2014-07-12 first release.
+  * "git dust commit" and "git dust fix".
+
 ## Contributing
 
 1. Fork it
