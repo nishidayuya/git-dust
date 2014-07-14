@@ -3,6 +3,7 @@
 A Git sub command for Dust Commits Workflow.
 
 [![Gem Version](https://badge.fury.io/rb/git-dust.svg)](http://badge.fury.io/rb/git-dust)
+[![Dependency Status](https://gemnasium.com/nishidayuya/git-dust.svg)](https://gemnasium.com/nishidayuya/git-dust)
 [![Build Status](https://travis-ci.org/nishidayuya/git-dust.svg?branch=master)](https://travis-ci.org/nishidayuya/git-dust)
 
 ## Installation
