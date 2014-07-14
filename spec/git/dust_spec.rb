@@ -101,4 +101,68 @@ EOS
       end
     end
   end
+
+  describe ".edit_rebase_commit_list" do
+    describe "rebase_commit_list file path arg" do
+      let(:git_editor_input_path) {
+        path = tmp_path + "editor_input"
+        path.write("nothing input.\n") # will be overridden
+        path
+      }
+
+      let(:git_editor_path) {
+        path = tmp_path + "editor"
+        path.write(<<EOS)
+#! /bin/sh
+
+file=$1
+cat $file > #{git_editor_input_path}
+echo "some commit message." > $file
+EOS
+        path.chmod(0755)
+        path
+      }
+
+      it "edit rebase commit list" do
+        Tempfile.open("git-dust_spec") do |f|
+          comments_section = <<EOS
+# Rebase 1234567..890abcd onto ef01234
+#
+# Commands:
+#  p, pick = use commit
+#  r, reword = use commit, but edit the commit message
+#  e, edit = use commit, but stop for amending
+#  s, squash = use commit, but meld into previous commit
+#  f, fixup = like "squash", but discard this commit's log message
+#  x, exec = run command (the rest of the line) using shell
+#
+# These lines can be re-ordered; they are executed from top to bottom.
+#
+# If you remove a line here THAT COMMIT WILL BE LOST.
+#
+# However, if you remove everything, the rebase will be aborted.
+#
+# Note that empty commits are commented out
+EOS
+          f.write(<<EOS)
+pick 0123456 git dust commit.
+pick 7890abc git dust commit.
+pick def1234 git dust commit.
+
+#{comments_section}
+EOS
+          f.close
+          Git::Dust.edit_rebase_commit_list([f.path])
+          f.open
+          expect(f.read).to eq(<<EOS)
+pick 0123456 git dust commit.
+fixup 7890abc git dust commit.
+fixup def1234 git dust commit.
+
+#{comments_section}
+EOS
+        end
+      end
+    end
+  end
 end
