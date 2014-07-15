@@ -73,6 +73,23 @@ RSpec.describe Git::Dust do
         expect(Git::Dust).to have_received(:commit).with(%w(-a app))
       end
     end
+
+    describe "invalid command arg" do
+      it "display error message" do
+        expect do
+          expect do
+            Git::Dust.run(%w(invaid-command))
+          end.to raise_error(SystemExit)
+        end.to output(/\Asub command not found: sub_command=<invaid-command>/).
+          to_stderr
+      end
+
+      it "invoke help method" do
+        allow(Git::Dust).to receive(:help)
+        Git::Dust.run([])
+        expect(Git::Dust).to have_received(:help).with(nil)
+      end
+    end
   end
 
   describe ".commit" do
