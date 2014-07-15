@@ -49,6 +49,16 @@ RSpec.describe Git::Dust do
     tmp_path.rmtree
   end
 
+  describe ".run" do
+    describe "empty args" do
+      it "invoke help method" do
+        allow(Git::Dust).to receive(:help)
+        Git::Dust.run([])
+        expect(Git::Dust).to have_received(:help).with(nil)
+      end
+    end
+  end
+
   describe ".commit" do
     describe "empty args" do
       it "commit staging files with commit message" do
