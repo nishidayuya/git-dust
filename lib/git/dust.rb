@@ -19,7 +19,7 @@ end
 
 class Git::Dust
   def self.help(args = [])
-    STDERR.puts(<<EOS)
+    $stderr.puts(<<EOS)
 #{File.basename($0)} <command> [<args>]
 
 git dust commands are:
@@ -35,8 +35,8 @@ EOS
     if defined_commands.include?(command_symbol)
       send(command_symbol, args)
     else
-      STDERR.puts("sub command not found: sub_command=<#{command}>")
-      STDERR.puts
+      $stderr.puts("sub command not found: sub_command=<#{command}>")
+      $stderr.puts
       help
       exit(1)
     end
