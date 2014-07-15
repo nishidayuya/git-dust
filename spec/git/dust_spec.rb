@@ -65,6 +65,14 @@ RSpec.describe Git::Dust do
         expect(Git::Dust).to have_received(:commit).with([])
       end
     end
+
+    describe "command arg with optional args" do
+      it "invoke specified method with optional args" do
+        allow(Git::Dust).to receive(:commit)
+        Git::Dust.run(%w(commit -a app))
+        expect(Git::Dust).to have_received(:commit).with(%w(-a app))
+      end
+    end
   end
 
   describe ".commit" do
