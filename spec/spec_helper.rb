@@ -2,8 +2,13 @@ require "tmpdir"
 require "pathname"
 require "git"
 
-require "coveralls"
-Coveralls.wear!
+# for coverage tools
+require "simplecov"
+if ENV["TRAVIS"]
+  require "coveralls"
+  SimpleCov.formatter = Coveralls::SimpleCov::Formatter
+end
+SimpleCov.start if ENV["COVERAGE"] || ENV["TRAVIS"]
 
 require "git/dust"
 
