@@ -103,6 +103,16 @@ RSpec.describe Git::Dust do
         expect(g.log.first.message).to eq("git dust commit.")
       end
     end
+
+    describe "invalid args" do
+      it "raise RuntimeError" do
+        g.chdir do
+          expect do
+            Git::Dust.commit(%w(invalid-file-name.t))
+          end.to raise_error(RuntimeError)
+        end
+      end
+    end
   end
 
   describe ".fix" do
