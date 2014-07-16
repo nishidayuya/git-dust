@@ -153,6 +153,17 @@ EOS
         expect(g.log.first.message).to eq("some commit message.")
       end
     end
+
+    describe "no dust commits" do
+      it "raise RuntimeError" do
+        g.chdir do
+          g.commit("git dust commit.", amend: true)
+          expect do
+            Git::Dust.fix([])
+          end.to raise_error(RuntimeError, "non dust commit is not exist.")
+        end
+      end
+    end
   end
 
   describe ".edit_rebase_commit_list" do
