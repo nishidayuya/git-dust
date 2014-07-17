@@ -49,6 +49,14 @@ RSpec.describe Git::Dust do
     tmp_path.rmtree
   end
 
+  describe ".help" do
+    it "display help message" do
+      expect do
+        Git::Dust.help([])
+      end.to output(/#{Regexp.escape(" <command> [<args>]\n\n")}/m).to_stderr
+    end
+  end
+
   describe ".run" do
     describe "empty args" do
       it "invoke help method" do
