@@ -3,17 +3,6 @@
 require "open3"
 require "pathname"
 
-# compatibility
-if !Pathname.public_method_defined?(:write)
-  class Pathname
-    def write(*args)
-      open("w") do |f|
-        f.write(*args)
-      end
-    end
-  end
-end
-
 module Git
 end
 
@@ -74,7 +63,9 @@ EOS
         output << l.sub(/\Apick/, "fixup")
       end
     end
-    rebase_todo_path.write(output.join)
+    rebase_todo_path.open("w") do |f|
+      f.write(output.join)
+    end
   end
 
   private
