@@ -19,7 +19,9 @@ $ gem install git-dust
 
 Install standalone version:
 ```sh
-$ curl https://raw.githubusercontent.com/nishidayuya/git-dust/master/lib/git/dust.rb > path-environment-directory/git-dust
+$ curl https://raw.githubusercontent.com/nishidayuya/git-dust/master/lib/git/dust.rb \
+| sed -e 's/^# FOR STANDALONE: //' \
+> path-environment-directory/git-dust
 $ chmod a+x path-environment-directory/git-dust
 ```
 

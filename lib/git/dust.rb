@@ -89,6 +89,4 @@ EOS
   end
 end
 
-if $0 == __FILE__
-  Git::Dust.run(ARGV)
-end
+# FOR STANDALONE: Git::Dust.run(ARGV)
