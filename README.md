@@ -2,6 +2,7 @@
 
 A Git sub command for Dust Commits Workflow.
 
+[![License X11](https://img.shields.io/badge/license-X11-brightgreen.svg)](https://raw.githubusercontent.com/nishidayuya/git-dust/master/LICENSE.txt)
 [![Gem Version](https://badge.fury.io/rb/git-dust.svg)](http://badge.fury.io/rb/git-dust)
 [![Dependency Status](https://gemnasium.com/nishidayuya/git-dust.svg)](https://gemnasium.com/nishidayuya/git-dust)
 [![Build Status](https://travis-ci.org/nishidayuya/git-dust.svg?branch=master)](https://travis-ci.org/nishidayuya/git-dust)
