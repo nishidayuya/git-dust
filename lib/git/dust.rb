@@ -79,7 +79,7 @@ EOS
   end
 
   def self.find_non_dust_commit
-    Open3.popen2("git log --format=oneline") do |stdin, stdout, wait_thread|
+    Open3.popen2("git log --format=oneline") do |_stdin, stdout, _wait_thread|
       stdout.each_line.each do |line|
         sha1, subject = line.chomp.split(" ", 2)
         return sha1 if COMMIT_MESSAGE != subject
