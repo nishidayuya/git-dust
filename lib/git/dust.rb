@@ -7,7 +7,7 @@ module Git
 end
 
 class Git::Dust
-  def self.help(args = [])
+  def self.help(_args = [])
     $stderr.puts(<<EOS)
 #{File.basename($0)} <command> [<args>]
 
@@ -35,7 +35,7 @@ EOS
     run_command(*%w(git commit -m), COMMIT_MESSAGE, *args)
   end
 
-  def self.fix(args)
+  def self.fix(_args)
     base_sha1 = find_non_dust_commit
     saved_editor_environment = ENV["GIT_SEQUENCE_EDITOR"]
     begin
