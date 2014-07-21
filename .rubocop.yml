@@ -10,3 +10,7 @@ inherit_from: .rubocop_todo.yml
 #   So, block caller MUST NOT use block result.
 Style/Blocks:
   Enabled: false
+
+# For low indent level.
+Style/ClassAndModuleChildren:
+  EnforcedStyle: compact
