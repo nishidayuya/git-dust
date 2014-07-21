@@ -1,1 +1,12 @@
 inherit_from: .rubocop_todo.yml
+
+# We adopt "Semantic Block".
+# In "Semantic Block" way, "{...}" block and "do ... end" block are
+# NOT same semantics.
+#
+# * "{...}" block specifies last evaluated value.
+#   Block caller can use block result.
+# * "do ... end" block doesn't specify last evaluated value.
+#   So, block caller MUST NOT use block result.
+Style/Blocks:
+  Enabled: false

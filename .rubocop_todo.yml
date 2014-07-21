@@ -9,11 +9,6 @@
 Lint/UselessAccessModifier:
   Enabled: false
 
-# Offense count: 7
-# Cop supports --auto-correct.
-Style/Blocks:
-  Enabled: false
-
 # Offense count: 1
 # Configuration parameters: EnforcedStyle, SupportedStyles.
 Style/ClassAndModuleChildren:
