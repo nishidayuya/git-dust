@@ -8,4 +8,4 @@ RuboCop::RakeTask.new do |task|
   task.patterns = %w(lib/**/*.rb spec/**/*.rb **/*.gemspec)
 end
 
-task :default => %i(rubocop spec)
+task default: %i(rubocop spec)
