@@ -14,3 +14,7 @@ Style/Blocks:
 # For low indent level.
 Style/ClassAndModuleChildren:
   EnforcedStyle: compact
+
+# From number of terminal lines - 2 ("def" line and "end" line).
+Style/MethodLength:
+  Max: 22
