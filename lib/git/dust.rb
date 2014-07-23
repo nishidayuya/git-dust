@@ -73,9 +73,7 @@ EOS
   COMMIT_MESSAGE = "git dust commit.".freeze
 
   def self.run_command(*args)
-    if !system(*args)
-      raise "failed: args=<#{args.inspect}>"
-    end
+    raise "failed: args=<#{args.inspect}>" if !system(*args)
   end
 
   def self.find_non_dust_commit
