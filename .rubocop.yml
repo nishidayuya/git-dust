@@ -18,3 +18,16 @@ Style/ClassAndModuleChildren:
 # From number of terminal lines - 2 ("def" line and "end" line).
 Style/MethodLength:
   Max: 22
+
+# "if !a" is better than "unless a", we think.
+# Because condition(s) often will be appended another codition(s).
+# In "unless a" case, we'll inverse codition(s).
+#
+# Which do you like?
+# * unless: "unless a" + "&& b"
+#   We'll waver between "unless a || !b" and "if !a && b".
+#   In either case, our brain must inverse condition.
+# * if !: "if !a" + "&& b"
+#   We'll write "if !a && b" without inverse.
+Style/NegatedIf:
+  Enabled: false
