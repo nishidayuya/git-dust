@@ -54,10 +54,9 @@ EOS
     rebase_todo_path.open do |f|
       lines = f.each_line
       lines.each do |l| # write first commit
-        if !/\A\s*#/.match(l)
-          output << l
-          break
-        end
+        next if /\A\s*#/.match(l)
+        output << l
+        break
       end
       lines.each do |l| # change "pick" to "fixup"
         output << l.sub(/\Apick/, "fixup")
