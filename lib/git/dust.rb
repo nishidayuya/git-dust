@@ -72,7 +72,7 @@ EOS
   COMMIT_MESSAGE = "git dust commit.".freeze
 
   def self.run_command(*args)
-    raise "failed: args=<#{args.inspect}>" if !system(*args)
+    fail "failed: args=<#{args.inspect}>" if !system(*args)
   end
 
   def self.find_non_dust_commit
@@ -82,7 +82,7 @@ EOS
         return sha1 if COMMIT_MESSAGE != subject
       end
     end
-    raise "non dust commit is not exist."
+    fail "non dust commit is not exist."
   end
 end
 
