@@ -31,3 +31,7 @@ Style/MethodLength:
 #   We'll write "if !a && b" without inverse.
 Style/NegatedIf:
   Enabled: false
+
+# Don't allow /\//.
+Style/RegexpLiteral:
+  MaxSlashes: 0
