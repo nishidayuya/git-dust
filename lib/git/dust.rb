@@ -9,7 +9,7 @@ end
 class Git::Dust
   def self.help(_args = [])
     $stderr.puts(<<EOS)
-#{File.basename($0)} <command> [<args>]
+#{File.basename($PROGRAM_NAME)} <command> [<args>]
 
 git dust commands are:
 * commit
