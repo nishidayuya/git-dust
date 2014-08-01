@@ -12,8 +12,3 @@ Lint/UselessAccessModifier:
 # Offense count: 2
 Style/Documentation:
   Enabled: false
-
-# Offense count: 1
-# Configuration parameters: EnforcedStyle, SupportedStyles.
-Style/DotPosition:
-  Enabled: false

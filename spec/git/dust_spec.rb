@@ -88,8 +88,8 @@ RSpec.describe Git::Dust do
           expect do
             Git::Dust.run(%w(invaid-command))
           end.to raise_error(SystemExit)
-        end.to output(/\Asub command not found: sub_command=<invaid-command>/).
-          to_stderr
+        end.to output(/\Asub command not found: sub_command=<invaid-command>/)
+          .to_stderr
       end
 
       it "invoke help method" do
