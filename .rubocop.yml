@@ -35,3 +35,14 @@ Style/NegatedIf:
 # Don't allow /\//.
 Style/RegexpLiteral:
   MaxSlashes: 0
+
+# Sometimes we add "#{...}" to string which is already exists.
+#
+# Which do you like?
+# * single_quotes: 'foo' + "#{a}" => "foo#{a}"
+#   Oops, we must change from ' to ". And we take extra differences.
+#   (Try "git diff --color-words=." or "git log -p --color-words=.")
+# * double_quotes: "foo" + "#{a}" => "foo#{a}"
+#   There is no problem on another case.
+Style/StringLiterals:
+  EnforcedStyle: double_quotes
