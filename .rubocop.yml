@@ -46,3 +46,7 @@ Style/RegexpLiteral:
 #   There is no problem on another case.
 Style/StringLiterals:
   EnforcedStyle: double_quotes
+
+# To define private constants.
+Lint/UselessAccessModifier:
+  Enabled: false
