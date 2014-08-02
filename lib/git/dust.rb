@@ -3,9 +3,11 @@
 require "open3"
 require "pathname"
 
+# A namespace for Git::Dust.
 module Git
 end
 
+# Main class.
 class Git::Dust
   def self.help(_args = [])
     $stderr.puts(<<EOS)
