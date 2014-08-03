@@ -1,0 +1,50 @@
+# We adopt "Semantic Block".
+# In "Semantic Block" way, "{...}" block and "do ... end" block are
+# NOT same semantics.
+#
+# * "{...}" block specifies last evaluated value.
+#   Block caller can use block result.
+# * "do ... end" block doesn't specify last evaluated value.
+#   So, block caller MUST NOT use block result.
+Style/Blocks:
+  Enabled: false
+
+# For low indent level.
+Style/ClassAndModuleChildren:
+  EnforcedStyle: compact
+
+# From number of terminal lines - 2 ("def" line and "end" line).
+Style/MethodLength:
+  Max: 22
+
+# "if !a" is better than "unless a", we think.
+# Because condition(s) often will be appended another codition(s).
+# In "unless a" case, we'll inverse codition(s).
+#
+# Which do you like?
+# * unless: "unless a" + "&& b"
+#   We'll waver between "unless a || !b" and "if !a && b".
+#   In either case, our brain must inverse condition.
+# * if !: "if !a" + "&& b"
+#   We'll write "if !a && b" without inverse.
+Style/NegatedIf:
+  Enabled: false
+
+# Don't allow /\//.
+Style/RegexpLiteral:
+  MaxSlashes: 0
+
+# Sometimes we add "#{...}" to string which is already exists.
+#
+# Which do you like?
+# * single_quotes: 'foo' + "#{a}" => "foo#{a}"
+#   Oops, we must change from ' to ". And we take extra differences.
+#   (Try "git diff --color-words=." or "git log -p --color-words=.")
+# * double_quotes: "foo" + "#{a}" => "foo#{a}"
+#   There is no problem on another case.
+Style/StringLiterals:
+  EnforcedStyle: double_quotes
+
+# To define private constants.
+Lint/UselessAccessModifier:
+  Enabled: false

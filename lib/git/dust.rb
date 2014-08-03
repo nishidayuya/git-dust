@@ -3,13 +3,15 @@
 require "open3"
 require "pathname"
 
+# A namespace for Git::Dust.
 module Git
 end
 
+# Main class.
 class Git::Dust
-  def self.help(args = [])
+  def self.help(_args = [])
     $stderr.puts(<<EOS)
-#{File.basename($0)} <command> [<args>]
+#{File.basename($PROGRAM_NAME)} <command> [<args>]
 
 git dust commands are:
 * commit
@@ -35,7 +37,7 @@ EOS
     run_command(*%w(git commit -m), COMMIT_MESSAGE, *args)
   end
 
-  def self.fix(args)
+  def self.fix(_args)
     base_sha1 = find_non_dust_commit
     saved_editor_environment = ENV["GIT_SEQUENCE_EDITOR"]
     begin
@@ -54,10 +56,9 @@ EOS
     rebase_todo_path.open do |f|
       lines = f.each_line
       lines.each do |l| # write first commit
-        if !/\A\s*#/.match(l)
-          output << l
-          break
-        end
+        next if /\A\s*#/.match(l)
+        output << l
+        break
       end
       lines.each do |l| # change "pick" to "fixup"
         output << l.sub(/\Apick/, "fixup")
@@ -73,19 +74,17 @@ EOS
   COMMIT_MESSAGE = "git dust commit.".freeze
 
   def self.run_command(*args)
-    if !system(*args)
-      raise "failed: args=<#{args.inspect}>"
-    end
+    fail "failed: args=<#{args.inspect}>" if !system(*args)
   end
 
   def self.find_non_dust_commit
-    Open3.popen2("git log --format=oneline") do |stdin, stdout, wait_thread|
+    Open3.popen2("git log --format=oneline") do |_stdin, stdout, _wait_thread|
       stdout.each_line.each do |line|
         sha1, subject = line.chomp.split(" ", 2)
         return sha1 if COMMIT_MESSAGE != subject
       end
     end
-    raise "non dust commit is not exist."
+    fail "non dust commit is not exist."
   end
 end
 

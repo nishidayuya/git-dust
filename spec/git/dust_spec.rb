@@ -88,8 +88,8 @@ RSpec.describe Git::Dust do
           expect do
             Git::Dust.run(%w(invaid-command))
           end.to raise_error(SystemExit)
-        end.to output(/\Asub command not found: sub_command=<invaid-command>/).
-          to_stderr
+        end.to output(/\Asub command not found: sub_command=<invaid-command>/)
+          .to_stderr
       end
 
       it "invoke help method" do
@@ -106,7 +106,9 @@ RSpec.describe Git::Dust do
         g.chdir do
           expect do
             Git::Dust.commit([])
-          end.to change {g.log.count}.by(1)
+          end.to change {
+            g.log.count
+          }.by(1)
         end
         expect(g.log.first.message).to eq("git dust commit.")
       end
@@ -155,7 +157,9 @@ EOS
                 GIT_EDITOR: git_editor_path) do
             expect do
               Git::Dust.fix([])
-            end.to change {g.log.count}.from(3).to(2)
+            end.to change {
+              g.log.count
+            }.from(3).to(2)
           end
         end
         expect(g.log.first.message).to eq("some commit message.")
